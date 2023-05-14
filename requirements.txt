@@ -1,0 +1,4 @@
+python-osc
+click
+oscpy
+psutil
