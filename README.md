@@ -4,7 +4,7 @@
 
 Installation for Mostra Sonora i Audiovisual - Convent de Sant Agusti, 2023 - Barcelona.
 
-By Rebecca Anne Peters and Óscar Gonz�lez.
+By Rebecca Anne Peters and Óscar González.
 
 ## Usage
 
