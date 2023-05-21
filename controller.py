@@ -67,7 +67,7 @@ def main():
                     started = 1
     except KeyboardInterrupt:
         print ("Shutdown requested...exiting")
-        subprocess.call(["./sonic-pi-tool.py", "stop"])
+        subprocess.call(["./sonic_pi_tool.py", "stop"])
     except Exception:
         traceback.print_exc(file=sys.stdout)
     sys.exit(0)
