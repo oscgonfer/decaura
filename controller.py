@@ -4,6 +4,7 @@ import subprocess
 from pythonosc import osc_message_builder
 from pythonosc import udp_client
 from os import walk, getcwd
+from os.path import exists, join
 import time
 import random
 import sys, traceback
@@ -24,7 +25,7 @@ songs = []
 for root, dirs, files in walk(getcwd()):
     for file in files:
         if file.startswith('decaura_vol'):
-            songs.append(file)
+            songs.append(join(root,file))
 
 print ("Songs list:")
 print (songs)
@@ -36,8 +37,11 @@ def song_player():
     print ("Picking new song:")
     current_song = random.choice(songs)
     print (current_song)
+    if not exists(current_song): 
+        print ("Song doesn't exist. Returning...")
+        return
     print ("Starting it...")
-    subprocess.call(["./sonic_pi_tool.py", "run-file", f"compositions/{current_song}"])
+    subprocess.call(["./sonic_pi_tool.py", "run-file", current_song])
     
     duration = random.randint(min_time, max_time)
     elapsed_time = 0
